@@ -1,2 +1,4 @@
+SHELL=/bin/sh
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 #*/5 * * * * /usr/share/nginx/html/yii chat/index >>/var/log/cron.log
 */1 * * * * echo 111111 >>/var/log/cron.log
