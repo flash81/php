@@ -10,4 +10,4 @@ RUN apt-get update && apt-get install -y \
     && pecl install redis \
     && docker-php-ext-enable redis \
     && pecl install mongodb-1.1.8 \
-RUN echo "extension=mongodb.so" > $PHP_INI_DIR/conf.d/mongodb.ini
+RUN echo "extension=mongodb.so" >> `php --ini | grep "Loaded Configuration" | sed -e "s|.*:\s*||"`
