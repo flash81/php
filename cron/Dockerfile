@@ -12,6 +12,6 @@ RUN apt-get update && apt-get install -y \
     && pecl install redis \
     && docker-php-ext-enable redis \
     && pecl install mongodb \
-RUN echo "extension=mongodb.so" >> `/usr/local/etc/php/conf.d/docker-php-ext-mongodb.ini`
+    && docker-php-ext-enable mongodb
 ADD run.sh /run.sh
 CMD ["run.sh"]
