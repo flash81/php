@@ -10,5 +10,5 @@ RUN apt-get update && apt-get install -y \
     && docker-php-ext-install -j$(nproc) bcmath \
     && pecl install redis \
     && docker-php-ext-enable redis \
-    && pecl install mongodb-1.1.8 \
+    && pecl install mongodb \
 RUN echo "extension=mongodb.so" >> `php --ini | grep "Loaded Configuration" | sed -e "s|.*:\s*||"`

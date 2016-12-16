@@ -3,6 +3,7 @@ RUN apt-get update && apt-get install -y \
         libfreetype6-dev \
         libjpeg62-turbo-dev \
         libmcrypt-dev \
+        libssl-dev \
         cron \
     && docker-php-ext-install pdo_mysql mcrypt \
     && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
@@ -10,5 +11,5 @@ RUN apt-get update && apt-get install -y \
     && docker-php-ext-install -j$(nproc) bcmath \
     && pecl install redis \
     && docker-php-ext-enable redis \
-    && pecl install mongodb-1.1.8 \
-RUN echo "extension=mongodb.so" > $PHP_INI_DIR/conf.d/mongodb.ini
+    && pecl install mongodb \
+RUN echo "extension=mongodb.so" >> `php --ini | grep "Loaded Configuration" | sed -e "s|.*:\s*||"`
