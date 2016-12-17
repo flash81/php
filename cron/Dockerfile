@@ -1,4 +1,6 @@
 FROM php:7.0
+MAINTAINER yefengli <2684498887@qq.com>
+
 RUN apt-get update && apt-get install -y \
         libfreetype6-dev \
         libjpeg62-turbo-dev \
@@ -14,6 +16,5 @@ RUN apt-get update && apt-get install -y \
     && pecl install mongodb \
     && docker-php-ext-enable mongodb
 ADD run.sh /run.sh
-
 RUN chmod 755 /run.sh
 CMD ["/run.sh"]
