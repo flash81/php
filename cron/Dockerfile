@@ -14,4 +14,4 @@ RUN apt-get update && apt-get install -y \
     && pecl install mongodb \
     && docker-php-ext-enable mongodb
 ADD run.sh /run.sh
-CMD ["run.sh"]
+CMD ["/run.sh"]
