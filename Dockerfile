@@ -1,4 +1,4 @@
-FROM php:5.6
+FROM php:7.0
 RUN apt-get update && apt-get install -y \
         libfreetype6-dev \
         libjpeg62-turbo-dev \
@@ -11,6 +11,4 @@ RUN apt-get update && apt-get install -y \
     && pecl install redis \
     && docker-php-ext-enable redis \
     && pecl install mongodb \
-    && docker-php-ext-enable mongodb \
-    && pecl install solr \
-    && docker-php-ext-enable solr
+    && docker-php-ext-enable mongodb

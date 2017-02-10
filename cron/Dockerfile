@@ -1,4 +1,4 @@
-FROM php:5.6
+FROM php:7.0
 MAINTAINER yefengli <2684498887@qq.com>
 
 RUN apt-get update && apt-get install -y \
@@ -14,9 +14,7 @@ RUN apt-get update && apt-get install -y \
     && pecl install redis \
     && docker-php-ext-enable redis \
     && pecl install mongodb \
-    && docker-php-ext-enable mongodb \
-    && pecl install solr \
-    && docker-php-ext-enable solr
+    && docker-php-ext-enable mongodb
 ADD run.sh /run.sh
 RUN chmod 755 /run.sh
 CMD ["/run.sh"]
