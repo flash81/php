@@ -15,6 +15,8 @@ RUN apt-get update && apt-get install -y \
     && docker-php-ext-install -j$(nproc) bcmath \
     && pecl install redis \
     && docker-php-ext-enable redis \
+    && pecl install solr \
+    && docker-php-ext-enable solr \
     && pecl install mongodb \
     && docker-php-ext-enable mongodb
 ADD run.sh /run.sh
