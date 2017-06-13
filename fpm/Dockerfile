@@ -15,4 +15,6 @@ RUN apt-get update && apt-get install -y \
     && pecl install mongodb \
     && docker-php-ext-enable mongodb \
     && pecl install solr \
-    && docker-php-ext-enable solr
+    && docker-php-ext-enable solr \
+    && pecl install soap \
+    && docker-php-ext-enable soap
