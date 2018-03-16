@@ -18,5 +18,5 @@ RUN apt-get update && apt-get install -y \
     && docker-php-ext-enable mongodb \
     && pecl install solr \
     && docker-php-ext-enable solr \
-    && pecl install swoole \
+    && pecl install swoole-2.1.1 \
     && docker-php-ext-enable swoole
