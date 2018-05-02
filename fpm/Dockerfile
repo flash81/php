@@ -12,8 +12,6 @@ RUN apt-get update && apt-get install -y \
     && docker-php-ext-install -j$(nproc) bcmath \
     && docker-php-ext-install -j$(nproc) soap \
     && docker-php-ext-install -j$(nproc) zip \
-    && docker-php-ext-install -j$(nproc) imagemagick \
-    && docker-php-ext-install -j$(nproc) zbar-tools \
     && pecl install redis \
     && docker-php-ext-enable redis \
     && pecl install mongodb \
