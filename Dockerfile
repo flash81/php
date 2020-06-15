@@ -1,4 +1,4 @@
-FROM php:7.0
+FROM php:7.4-cli
 RUN apt-get update && apt-get install -y \
         libfreetype6-dev \
         libjpeg62-turbo-dev \
@@ -18,5 +18,5 @@ RUN apt-get update && apt-get install -y \
     && docker-php-ext-enable mongodb \
     && pecl install solr \
     && docker-php-ext-enable solr \
-    && pecl install swoole-2.1.1 \
+    && pecl install swoole-4.5.2 \
     && docker-php-ext-enable swoole
